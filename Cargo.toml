@@ -1,0 +1,6 @@
+[package]
+name = "meme-bin-rider"
+version = "0.1.0"
+authors = ["Clinton McKay <ziesunkownemail@clueless.duh>"]
+
+[dependencies]
