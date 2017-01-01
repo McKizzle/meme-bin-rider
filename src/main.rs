@@ -5,6 +5,7 @@ extern crate rocket;
 extern crate rand;
 
 use rand::distributions::{IndependentSample, Range};
+use std::fs::File;
 
 static SAMPLE_SPACE: &'static [u8] = b"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
@@ -16,6 +17,13 @@ fn index() -> &'static str {
 #[post("/")]
 fn post_index() -> String {
     gen_code()
+}
+
+/**
+ * Saves a file with the given name
+ */
+fn touch<T: AsRef<str>>(name: T) {
+    File::create(name.as_ref());
 }
 
 /**
